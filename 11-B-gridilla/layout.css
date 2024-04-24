@@ -1,0 +1,89 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-around;
+}
+
+.container {
+  width: 400px;
+  background: linear-gradient(to bottom right, gainsboro, white);
+  padding: 1em;
+  border: black solid 1px;
+  border-radius: 5px;
+  margin: 30px 10px;
+}
+
+.container .kuva img {
+  padding: 5px;
+  border-top: lightgrey solid 1px;
+  border-left: lightgrey solid 1px;
+  border-right: darkgrey solid 1px;
+  border-bottom: darkgrey solid 1px;
+  background: white;
+  box-shadow: 3px 3px darkgrey;
+  max-width: 100%;
+}
+
+.clearfix {
+  margin: 10px 20px;
+  gap: 5px;
+  padding-bottom: 10px;
+  display: grid;
+  grid-template-columns: 98px 252px;
+  grid-template-rows: auto;
+  grid-template-areas:
+    "kuva otsikko"
+    "kuva teksti";
+}
+
+.clearfix-reverse {
+  margin: 10px 20px;
+  gap: 5px;
+  padding-bottom: 10px;
+  display: grid;
+  grid-template-columns: 252px 98px;
+  grid-template-rows: auto;
+  grid-template-areas:
+    "otsikko kuva"
+    "teksti kuva";
+}
+
+.kuva {
+  grid-area: kuva;
+  grid-row: 1 / span 2;
+}
+
+.otsikko {
+  grid-area: otsikko;
+  margin-bottom: 5px;
+  font-size: 1rem;
+  letter-spacing: 1px;
+  color: #627081;
+}
+
+.teksti {
+  grid-area: teksti;
+  font-size: 1rem;
+  line-height: 1.5em;
+  color: #666;
+}
+@media screen and (max-width: 425px) {
+  body {
+    display: block;
+    margin: 0;
+  }
+  .container {
+    margin-top: 0;
+    margin-left: 0;
+    margin-right: 0;
+    min-width: 320px;
+    padding: 10px;
+  }
+}
