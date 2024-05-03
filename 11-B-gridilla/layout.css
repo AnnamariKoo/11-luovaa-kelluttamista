@@ -6,9 +6,10 @@
 
 body {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
-  box-sizing: border-box;
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-around;
+  margin: 0 auto;
 }
 
 .container {
@@ -74,16 +75,10 @@ body {
   line-height: 1.5em;
   color: #666;
 }
-@media screen and (max-width: 425px) {
+
+@media screen and (min-width: 768px) {
   body {
-    display: block;
-    margin: 0;
-  }
-  .container {
-    margin-top: 0;
-    margin-left: 0;
-    margin-right: 0;
-    min-width: 320px;
-    padding: 10px;
+    flex-direction: row;
+    flex: 1;
   }
 }
